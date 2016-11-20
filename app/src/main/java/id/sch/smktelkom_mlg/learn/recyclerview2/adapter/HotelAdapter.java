@@ -1,6 +1,5 @@
 package id.sch.smktelkom_mlg.learn.recyclerview2.adapter;
 
-import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,8 +35,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder holder, int position) {
         Hotel hotel = hotelList.get(position);
         holder.tvJudul.setText(hotel.judul);
-        holder.tvDeskripsi.setText(hotel.deskripsi);
-        holder.ivFoto.setImageDrawable(holder.foto);
+        holder.ivFoto.setImageDrawable(hotel.foto);
     }
 
     @Override
@@ -48,16 +46,14 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public Drawable foto;
         ImageView ivFoto;
         TextView tvJudul;
-        TextView tvDeskripsi;
 
         public ViewHolder(View itemView) {
             super(itemView);
             ivFoto = (ImageView) itemView.findViewById(R.id.imageView);
             tvJudul = (TextView) itemView.findViewById(R.id.textViewJudul);
-            tvDeskripsi = (TextView) itemView.findViewById(R.id.textViewDeskripsi);
+
         }
     }
 }
